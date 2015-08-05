@@ -7,8 +7,14 @@ class String
                    "K" => 5,
                    "J" => 8, "X" => 8,
                    "Q" => 10, "Z" => 10}
-    return the_letters[self]
-    else "error."
+    words = self.split("")
+
+    score = 0
+    words.each() do |letter|
+      letter_score = the_letters.fetch(letter)
+      score = score.+(letter_score)
+    end
+    score
   end
 end
 
